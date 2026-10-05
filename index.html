@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b3d6e">
+<meta name="description" content="Nav-Buddy: 2nd Mate (FG) CoC study app: notes, quizzes, surveyor Q&A, ROR cards and Morse trainer. Free, works offline.">
+<title>Nav-Buddy</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <button class="icon-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+  <button class="icon-btn" id="back" aria-label="Back" hidden>‹</button>
+  <a class="brand" href="#/">Nav-<b>Buddy</b><small>2nd Mate (FG) CoC</small></a>
+  <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+  <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+</header>
+<div class="searchbar" id="searchbar" hidden>
+  <input id="q" type="search" placeholder="Search notes, questions, answers…" autocomplete="off">
+</div>
+<div class="layout">
+<aside id="sidebar" aria-label="Main navigation"></aside>
+<div id="scrim"></div>
+<main id="view" tabindex="-1"></main>
+</div>
+<script src="data/content.js"></script>
+<script src="ror.js"></script>
+<script src="morse.js"></script>
+<script src="navcalc.js"></script>
+<script src="symbols.js"></script>
+<script src="colreg.js"></script>
+<script src="features.js"></script>
+<script src="features2.js"></script>
+<script src="features3.js"></script>
+<script src="notesfmt.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

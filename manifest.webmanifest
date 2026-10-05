@@ -1,0 +1,10 @@
+{
+  "name": "Nav-Buddy",
+  "short_name": "Nav-Buddy",
+  "description": "2nd Mate (FG) CoC study app: notes, quizzes, surveyor Q&A, ROR cards and Morse trainer.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b3d6e",
+  "theme_color": "#0b3d6e",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

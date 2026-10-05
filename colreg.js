@@ -1,0 +1,57 @@
+/* COLREG 1972 rule finder: one-line summaries in our own words (not the official text).
+   Learn the exact wording from your own copy of the Regulations. */
+window.COLREG = [
+  { part: "Part A: General", rules: [
+    [1, "Application", "Applies on the high seas and all connected navigable waters. Local special rules, extra station or signal lights, and IMO-adopted traffic separation schemes are allowed. Vessels of special construction comply as closely as possible.", "F1-OR-01"],
+    [2, "Responsibility", "Nothing excuses neglect of the Rules or of good seamanship. You may depart from the Rules to avoid immediate danger, with due regard to all dangers and special circumstances.", "F1-OR-01"],
+    [3, "General definitions", "Defines vessel, power-driven, sailing, engaged in fishing, seaplane, not under command, restricted in ability to manoeuvre, constrained by draught, underway, length and breadth, in sight of one another, restricted visibility and WIG craft.", "F1-OR-01"]] },
+  { part: "Part B Section I: Conduct in any visibility", rules: [
+    [4, "Application", "Rules 4 to 10 apply in any condition of visibility.", "F1-OR-02"],
+    [5, "Look-out", "Keep a proper look-out at all times by sight, hearing and all available means, to fully appraise the situation and the risk of collision.", "F1-OR-02"],
+    [6, "Safe speed", "Always proceed at a speed that allows proper and effective action and stopping within a suitable distance. It lists factors for all vessels and extra factors for vessels using radar.", "F1-OR-02"],
+    [7, "Risk of collision", "Use all available means. If in doubt, assume risk exists. Use radar properly, including plotting. Do not act on scanty (especially radar) information. A compass bearing that does not change appreciably means risk. Risk may still exist with a changing bearing (large vessels, tows, close range).", "F1-OR-02"],
+    [8, "Action to avoid collision", "Action must be positive, made in ample time and in line with good seamanship. Alterations should be large enough to be readily apparent, and pass at a safe distance. Slacken, stop or reverse if needed. Covers the 'not to impede' duties.", "F1-OR-02"],
+    [9, "Narrow channels", "Keep to the starboard side of the channel. Small craft, sailing and fishing vessels must not impede vessels confined to the channel. Do not cross if it impedes. Overtaking needs agreement by sound signals. Sound a prolonged blast at bends. Avoid anchoring.", "F1-OR-02"],
+    [10, "Traffic separation schemes", "Use the correct lane in the direction of traffic flow, keep clear of separation zones, join or leave at the ends or at a small angle, and cross at right angles as nearly as practicable. Inshore zone limits apply. Small, sailing and fishing vessels must not impede through traffic. The rule does not relieve any vessel of the other rules.", "F1-OR-02"]] },
+  { part: "Part B Section II: Vessels in sight of one another", rules: [
+    [11, "Application", "Rules 11 to 18 apply only to vessels in sight of one another.", "F1-OR-03"],
+    [12, "Sailing vessels", "Wind on different sides: the vessel with the wind on the port side keeps clear. Same side: the windward vessel keeps clear. If a port-tack vessel cannot tell which side the other has the wind, it keeps clear.", "F1-OR-03"],
+    [13, "Overtaking", "An overtaking vessel keeps out of the way. Overtaking means coming up from more than 22.5° abaft the other's beam (at night, seeing only her sternlight). If in doubt, assume you are overtaking. A later change of bearing does not make it a crossing.", "F1-OR-03"],
+    [14, "Head-on situation", "Two power-driven vessels meeting on reciprocal or nearly reciprocal courses each alter to starboard and pass port to port. It is head-on when masthead lights are in line or nearly so, and/or both sidelights are seen. If in doubt, assume head-on.", "F1-OR-03"],
+    [15, "Crossing situation", "Of two power-driven vessels crossing with risk of collision, the one that has the other on her own starboard side keeps out of the way, and should avoid crossing ahead.", "F1-OR-03"],
+    [16, "Action by give-way vessel", "Take early and substantial action to keep well clear.", "F1-OR-03"],
+    [17, "Action by stand-on vessel", "Keep course and speed. You may act once it is apparent the give-way vessel is not acting. You must act when collision cannot be avoided by her action alone. A power-driven stand-on vessel in a crossing should not alter to port for a vessel on her own port side, if possible. The give-way duty remains.", "F1-OR-03"],
+    [18, "Responsibilities between vessels", "Order of keeping clear: power-driven keeps clear of NUC, RAM, fishing and sailing vessels. Sailing keeps clear of NUC, RAM and fishing. Fishing keeps clear of NUC and RAM. Avoid impeding a vessel constrained by her draught. Seaplanes and WIG craft keep clear of all.", "F1-OR-03"]] },
+  { part: "Part B Section III: Restricted visibility", rules: [
+    [19, "Conduct in restricted visibility", "Applies to vessels not in sight of one another. Proceed at a safe speed with engines ready. A vessel detected by radar alone: avoid altering to port for a vessel forward of the beam (unless being overtaken), and avoid altering towards a vessel abeam or abaft the beam. On hearing a fog signal apparently forward of the beam, reduce to bare steerage way and navigate with extreme caution.", "F1-OR-04"]] },
+  { part: "Part C: Lights and shapes", rules: [
+    [20, "Application", "Lights from sunset to sunrise and in restricted visibility; no lights that could be mistaken for them. Shapes by day.", "F1-OR-05"],
+    [21, "Definitions", "Masthead 225° white; sidelights 112.5° each; sternlight 135°; towing light yellow 135°; all-round 360°; flashing light at 120 or more flashes per minute.", "F1-OR-05"],
+    [22, "Visibility of lights", "Minimum ranges. 50 m and over: masthead 6 nm, others 3 nm. 12–50 m: masthead 5 nm (3 nm if under 20 m), sidelights 2, stern/towing/all-round 2. Under 12 m: masthead 2, sidelights 1, others 2. Inconspicuous towed object: white all-round 3 nm.", "F1-OR-05"],
+    [23, "Power-driven vessels underway", "Masthead light, second masthead light aft and higher (50 m and over, optional below), sidelights and sternlight. Air-cushion vessel in non-displacement mode: yellow all-round flashing. WIG at take-off and landing: high-intensity red flashing. Small-vessel alternatives under 12 m and 7 m.", "F1-OR-05"],
+    [24, "Towing and pushing", "Towing: two masthead lights in a vertical line (three if the tow exceeds 200 m), sidelights, sternlight and a yellow towing light above it; a diamond by day if the tow exceeds 200 m. Rules for pushing ahead, alongside, composite units and the vessels being towed.", "F1-OR-05"],
+    [25, "Sailing vessels and vessels under oars", "Sidelights and sternlight; optional red over green all-round at the masthead. Under 20 m: may use a combined tricolour. Motor-sailing: a cone point down by day.", "F1-OR-05"],
+    [26, "Fishing vessels", "Trawling: green over white all-round; other fishing: red over white; plus sidelights and sternlight when making way. Gear extending over 150 m: white all-round or a cone point up towards the gear. Shapes: two cones points together (a basket if under 20 m).", "F1-OR-05"],
+    [27, "NUC and RAM vessels", "NUC: two red all-round in a vertical line (two balls). RAM: red-white-red (ball-diamond-ball). Dredging or underwater operations: two red on the obstructed side, two green on the passing side. Mine clearance: three green all-round (three balls). Small diving craft: flag A.", "F1-OR-05"],
+    [28, "Vessels constrained by their draught", "May show three red all-round lights in a vertical line, or a cylinder, in addition to power-driven lights.", "F1-OR-05"],
+    [29, "Pilot vessels", "On pilotage duty: white over red all-round at the masthead. Underway: also sidelights and sternlight. At anchor: also anchor lights.", "F1-OR-05"],
+    [30, "Anchored vessels and vessels aground", "Anchored: all-round white forward and a lower one aft (one light if under 50 m); a ball by day; vessels of 100 m and over must also use deck working lights. Aground: anchor lights plus two red all-round; three balls by day.", "F1-OR-05"],
+    [31, "Seaplanes and WIG craft", "Where the prescribed lights and shapes are impracticable, show them as closely as possible in characteristics and position.", "F1-OR-05"]] },
+  { part: "Part D: Sound and light signals", rules: [
+    [32, "Definitions", "Whistle; short blast about 1 second; prolonged blast 4 to 6 seconds.", "F1-OR-06"],
+    [33, "Equipment for sound signals", "12 m and over: whistle. 20 m and over: also a bell. 100 m and over: also a gong. Under 12 m: other means of making an efficient sound signal.", "F1-OR-06"],
+    [34, "Manoeuvring and warning signals", "In sight: one short blast = altering to starboard; two = altering to port; three = operating astern propulsion (may be supplemented by light flashes). Narrow-channel overtaking signals and the reply. At least five short and rapid blasts = doubt. One prolonged blast at bends.", "F1-OR-06"],
+    [35, "Sound signals in restricted visibility", "Making way: one prolonged blast at least every 2 minutes. Underway, stopped: two prolonged. NUC, RAM, CBD, sailing, fishing, towing or pushing: one prolonged and two short. Manned towed vessel: one prolonged and three short. At anchor: bell rung rapidly for 5 seconds every minute (gong aft for 100 m and over). Aground: three strokes, bell, three strokes. Pilot vessel may add four short blasts.", "F1-OR-06"],
+    [36, "Signals to attract attention", "Any light or sound signal that cannot be mistaken for a Rule signal, or a searchlight directed at the danger without embarrassing other vessels. Avoid high-intensity intermittent or revolving lights.", "F1-OR-06"],
+    [37, "Distress signals", "Use the signals in Annex IV.", "F1-OR-06"]] },
+  { part: "Parts E and F", rules: [
+    [38, "Exemptions", "Transitional exemptions for vessels built before the 1972 Rules came into force (light ranges, colours, positions, sound appliances), some time-limited, some permanent.", "F1-OR-07"],
+    [39, "Definitions", "IMO Audit Scheme, the III Code and the Audit Standard.", "F1-OR-07"],
+    [40, "Application", "Contracting Governments use the III Code in carrying out their obligations.", "F1-OR-07"],
+    [41, "Verification of compliance", "Contracting Governments are subject to periodic IMO audits.", "F1-OR-07"]] },
+  { part: "Annexes", rules: [
+    ["I", "Positioning and technical details of lights and shapes", "Heights, spacing, screens, sectors, colours, intensity and shape sizes (ball, cone, cylinder 0.6 m; shapes 1.5 m apart).", "F1-OR-05"],
+    ["II", "Additional signals for fishing vessels in close proximity", "Trawlers shooting or hauling nets, nets fast on an obstruction, pair trawling searchlights, purse seiners' alternating yellow lights.", "F1-OR-05"],
+    ["III", "Technical details of sound signal appliances", "Whistle frequencies and audibility ranges by length, bell and gong.", "F1-OR-06"],
+    ["IV", "Distress signals", "The recognised distress signals (gun, continuous fog signal, rockets or shells throwing red stars, SOS, MAYDAY, NC, square flag with ball, flames, red parachute flare or hand flare, orange smoke, slowly raising and lowering arms, radio and satellite alerts, EPIRB/SART).", "F1-OR-06"]] },
+];
