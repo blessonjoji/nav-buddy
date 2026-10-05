@@ -348,3 +348,8 @@ table.n-table td:first-child{font-weight:600}
 .n-memory p{margin:4px 0}
 .n-sec hr{border:0;border-top:1px dashed var(--line);margin:16px 0}
 @media (max-width:560px){.n-sec{padding:14px 13px 12px;border-radius:14px}.n-h1{font-size:16px;padding:9px 11px;gap:8px}.note-title{padding:16px}.note-title h1{font-size:22px}ol.n-steps>li{padding-left:44px}}
+.n-draw{margin:4px 0;font-size:13px;color:var(--muted,#888)}
+.n-draw summary{cursor:pointer;list-style:none;font-style:italic}
+.n-draw summary::-webkit-details-marker{display:none}
+.n-draw summary::marker{content:""}
+.n-draw[open] > div{margin-top:4px;font-size:13.5px}

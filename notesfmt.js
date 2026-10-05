@@ -81,6 +81,19 @@
       article.append(el);
     });
 
+    // drawings: the long "Sketch:" descriptions become a one-line placeholder (tap to see what to draw)
+    article.querySelectorAll("strong").forEach(s => {
+      if (!/^(sketch|sketches|figures?|drawing)\b[^:]{0,40}:$/i.test(s.textContent.trim())) return;
+      const block = s.parentElement; if (!block || !/^(P|LI)$/.test(block.tagName)) return;
+      const d = document.createElement("details"); d.className = "n-draw";
+      d.innerHTML = '<summary>✏️ Drawing to be added</summary>';
+      const body = document.createElement("div");
+      let n = s.nextSibling; while (n) { const nx = n.nextSibling; body.append(n); n = nx; }
+      d.append(body); s.remove();
+      if (block.tagName === "LI") { if (block.textContent.trim()) block.append(d); else { block.innerHTML = ""; block.append(d); } }
+      else if (block.textContent.trim()) block.after(d); else block.replaceWith(d);
+    });
+
     // components
     article.querySelectorAll("h3").forEach(h => { h.className = "n-h2"; });
     article.querySelectorAll("ul").forEach(u => u.classList.add("n-list"));
