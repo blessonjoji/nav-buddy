@@ -359,3 +359,8 @@ table.n-table td:first-child{font-weight:600}
 .n-draw summary::-webkit-details-marker{display:none}
 .n-draw summary::marker{content:""}
 .n-draw[open] > div{margin-top:4px;font-size:13.5px}
+.n-tablebox{position:relative}
+.n-tablebox>.n-tablewrap{margin:12px 0}
+.n-scrollhint{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--n-blue,#1d4ed8);color:#fff;font-size:24px;line-height:32px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .4s}
+.n-scrollhint.show{opacity:.9;animation:nbnudge 1s ease-in-out infinite}
+@keyframes nbnudge{0%,100%{transform:translate(0,-50%)}50%{transform:translate(5px,-50%)}}
