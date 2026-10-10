@@ -122,19 +122,19 @@
     article.querySelectorAll("section.lead").forEach(s => {
       if ([...s.children].every(c => /(n-info|n-ok|n-warn|n-q)/.test(c.className) || c.tagName === "HR")) s.classList.add("bare");
     });
-    // wide tables: a right-arrow hint that fades out 2 s after the table comes into view
+    // wide tables: a right-arrow hint that fades out 5 s after the table comes into view
     requestAnimationFrame(() => {
       const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
         if (!e.isIntersecting) return; io.unobserve(e.target);
         const h = e.target.querySelector(".n-scrollhint"); if (!h) return;
-        h.classList.add("show"); setTimeout(() => h.classList.remove("show"), 2000);
+        h.classList.add("show"); setTimeout(() => h.classList.remove("show"), 5000);
       }), { threshold: 0.4 }) : null;
       article.querySelectorAll(".n-tablewrap").forEach(w => {
         if (w.scrollWidth <= w.clientWidth + 4) return;
         const box = document.createElement("div"); box.className = "n-tablebox"; w.replaceWith(box); box.append(w);
         const h = document.createElement("div"); h.className = "n-scrollhint"; h.setAttribute("aria-hidden", "true"); h.textContent = "›"; box.append(h);
         w.addEventListener("scroll", () => h.classList.remove("show"), { passive: true });
-        if (io) io.observe(box); else { h.classList.add("show"); setTimeout(() => h.classList.remove("show"), 2000); }
+        if (io) io.observe(box); else { h.classList.add("show"); setTimeout(() => h.classList.remove("show"), 5000); }
       });
     });
     markValues(article);
