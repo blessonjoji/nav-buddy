@@ -224,7 +224,7 @@
       <div class="sb-section">Functions</div>${["F1", "F2", "F3"].map(fn).join("")}${item("#/f/SIG", "light", "Signals<small>Morse</small>", "SIG")}
       <div class="sb-section">ROR & Stability</div>${item("#/ror", "light", "Lights & shapes<small>ROR cards</small>", "ror")}${item("#/colreg", "book", "COLREG rules", "colreg")}${item("#/annex", "file", "Annexes I to IV", "annex")}${item("#/arcs", "light", "Light arcs", "arcs")}${item("#/buoyage", "anchor", "Buoyage", "buoyage")}${item("#/situations", "ship", "Collision situations", "situations")}${item("#/stability", "scale", "Stability", "stability")}
       <div class="sb-section">Practice</div>${item("#/practice", "check", "Quiz Bank", "practice")}${item("#/papers", "file", "Past Papers", "papers")}${item("#/exam", "clock", "Exam Mode", "exam")}${item("#/tools", "calc", "Calculators", "tools")}
-      <div class="sb-section">My study</div>${item("#/progress", "scale", "Progress & planner", "progress")}${item("#/bookmarks", "book", "Bookmarks", "bookmarks")}${item("#/more", "search", "More", "more")}
+      <div class="sb-section">My study</div>${item("#/checklist", "check", "Syllabus checklist", "checklist")}${item("#/progress", "scale", "Progress & planner", "progress")}${item("#/bookmarks", "book", "Bookmarks", "bookmarks")}${item("#/more", "search", "More", "more")}
       <div class="sb-foot small muted">Free · offline · no account</div>`;
   }
   const closeDrawer = () => document.body.classList.remove("drawer");
@@ -594,6 +594,7 @@
     setTab("more"); title("More");
     view.innerHTML = `<h1>More</h1>
       <div class="list">
+        <a class="row" href="#/checklist"><span class="grow">Syllabus checklist (tick off)</span></a>
         <a class="row" href="#/progress"><span class="grow">Progress & exam planner</span></a>
         <a class="row" href="#/bookmarks"><span class="grow">Saved topics and answers</span></a>
         <a class="row" href="#/backup"><span class="grow">Backup & restore progress</span></a>

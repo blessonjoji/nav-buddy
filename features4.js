@@ -105,6 +105,22 @@
     r.onchange = () => { history.replaceState(null, "", "#/arcs/" + r.value); routes.arcs(H, [r.value]); };
   };
 
+  /* ---------- Syllabus checklist (tick off as you study) ---------- */
+  routes.checklist = (H, args) => {
+    H.setTab("checklist"); H.title("Syllabus checklist");
+    const D = window.NB_CHECKLIST || []; const S = H.S; S.ck = S.ck || {};
+    const open = args[0] !== undefined ? +args[0] : -1;
+    const key = (pi, it) => pi + "|" + it;
+    const count = pi => { let n = 0, d = 0; D[pi].secs.forEach(s => s.items.forEach(([it]) => { n++; if (S.ck[key(pi, it)]) d++; })); return [d, n]; };
+    let tn = 0, td = 0; D.forEach((p, i) => { const [d, n] = count(i); td += d; tn += n; });
+    H.view.innerHTML = `<h1>Syllabus checklist</h1><p class="muted small">Every item of the 2nd Mate (FG) syllabus, part by part. Tick each one when you can explain it without notes; tap a topic code to read it. For the orals, prepare each item at five levels: definition, principle, procedure, the rule that applies, and a scenario.</p>
+      <div class="card"><b>${td} of ${tn} ticked</b> (${tn ? Math.round(100 * td / tn) : 0} %)${H.bar(tn ? 100 * td / tn : 0)}</div>
+      <div class="list">${D.map((p, pi) => { const [d, n] = count(pi); return `<a class="row" href="#/checklist/${open === pi ? "" : pi}"><span class="grow"><b>${H.esc(p.t)}</b></span><span class="pill ${d === n ? "ok" : ""}">${d}/${n}</span></a>` +
+        (open === pi ? p.secs.map(s => `<div class="card"><b>${H.esc(s.t)}</b>${s.items.map(([it, m]) => `<label style="display:flex;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line)"><input type="checkbox" data-k="${H.esc(key(pi, it))}" ${S.ck[key(pi, it)] ? "checked" : ""}><span class="grow" style="flex:1">${H.esc(it)}</span>${m ? `<a class="small" href="#/m/${m}">${m}</a>` : ""}</label>`).join("")}</div>`).join("") : ""); }).join("")}</div>
+      <p class="small muted">COLREG has four annexes (I to IV); lists that show an "Annex V" are mixing in the US Inland Rules. Ticks are saved on this device; use Backup in More to move them.</p>`;
+    H.view.querySelectorAll("input[data-k]").forEach(c => c.onchange = () => { if (c.checked) S.ck[c.dataset.k] = 1; else delete S.ck[c.dataset.k]; H.save(); const y = window.scrollY; routes.checklist(H, [open]); window.scrollTo(0, y); });
+  };
+
   /* ---------- Stability hub ---------- */
   routes.stability = H => {
     H.setTab("stability"); H.title("Stability");
