@@ -96,7 +96,7 @@
 
   /* ---------- COLREG rule finder ---------- */
   routes.colreg = (H, args) => {
-    H.setTab("orals"); H.title("COLREG rule finder");
+    H.setTab("colreg"); H.title("COLREG rule finder");
     const q = decodeURIComponent(args[0] || "");
     H.view.innerHTML = `<h1>COLREG rule finder</h1><p class="muted">Every rule in one or two lines, in plain words. Learn the exact wording from your own copy of COLREG 1972.</p>
       <label class="fld"><span>Find a rule (number or words)</span><input id="cq" placeholder="e.g. 19, overtaking, anchor, fog" value="${H.esc(q)}"></label><div id="clist"></div>`;

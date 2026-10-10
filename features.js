@@ -211,7 +211,7 @@
   };
   let BQ = null;
   routes.buoyage = (H, args) => {
-    H.setTab("orals"); H.title("IALA buoyage"); SY().stopLamp();
+    H.setTab("buoyage"); H.title("IALA buoyage"); SY().stopLamp();
     const mode = args[0] || "learn", MK = SY().MARKS;
     const seg = `<div class="seg">${[["learn", "All marks"], ["quiz", "Quiz"]].map(([k, l]) => `<button class="${mode === k ? "on" : ""}" onclick="location.hash='#/buoyage/${k}'">${l}</button>`).join("")}</div>`;
     if (mode === "learn") {

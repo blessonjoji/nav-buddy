@@ -222,6 +222,7 @@
     };
     sb.innerHTML = `<div class="sb-brand">Nav-<b>Buddy</b><small>2ND MATE EXAM PREP</small></div><div class="sb-section">Navigation</div>${item("#/", "play", "Home", "home")}
       <div class="sb-section">Functions</div>${["F1", "F2", "F3"].map(fn).join("")}${item("#/f/SIG", "light", "Signals<small>Morse</small>", "SIG")}
+      <div class="sb-section">ROR & Stability</div>${item("#/ror", "light", "Lights & shapes<small>ROR cards</small>", "ror")}${item("#/colreg", "book", "COLREG rules", "colreg")}${item("#/annex", "file", "Annexes I to IV", "annex")}${item("#/arcs", "light", "Light arcs", "arcs")}${item("#/buoyage", "anchor", "Buoyage", "buoyage")}${item("#/situations", "ship", "Collision situations", "situations")}${item("#/stability", "scale", "Stability", "stability")}
       <div class="sb-section">Practice</div>${item("#/practice", "check", "Quiz Bank", "practice")}${item("#/papers", "file", "Past Papers", "papers")}${item("#/exam", "clock", "Exam Mode", "exam")}${item("#/tools", "calc", "Calculators", "tools")}
       <div class="sb-section">My study</div>${item("#/progress", "scale", "Progress & planner", "progress")}${item("#/bookmarks", "book", "Bookmarks", "bookmarks")}${item("#/more", "search", "More", "more")}
       <div class="sb-foot small muted">Free · offline · no account</div>`;
@@ -243,6 +244,7 @@
     view.innerHTML = `<div class="welcome"><h1>Nav-<span>Buddy</span></h1>
       <p>2nd Mate (FG) CoC preparation. Your complete guide to the written, oral and signals examinations. Free, offline, no account.</p>
       ${homeCards()}
+      <h2 class="home-h">ROR & Stability</h2>${tiles([["#/ror", "light", "Lights & shapes", "ROR cards"], ["#/colreg", "book", "COLREG rules", "every rule"], ["#/annex", "file", "Annexes", "I to IV"], ["#/arcs", "light", "Light arcs", "Rules 21, 22"], ["#/buoyage", "anchor", "Buoyage", "IALA marks"], ["#/stability", "scale", "Stability", "notes, quizzes, calculators"]])}
       <div class="home-strip">
         ${last ? `<a class="strip-item" href="#/m/${last.id}">${icon("play", "accent")}<span><span class="small muted">Continue reading</span><b>${esc(last.title.split(":")[0])}</b></span></a>` : ""}
         ${due ? `<a class="strip-item" href="#/quiz/review">${icon("repeat", "accent")}<span><span class="small muted">Spaced repetition</span><b>${plural(due, "question")} due</b></span></a>` : ""}
@@ -437,7 +439,7 @@
   /* ---------- ROR trainer ---------- */
   let R = null;
   function ror() {
-    setTab("orals"); title("Lights & shapes");
+    setTab("ror"); title("Lights & shapes");
     const deck = byId["F1-OR-08"].extras.cards.cards;
     if (!R) R = { filter: "all", order: shuffle(deck.map((_, i) => i)), i: 0, reveal: false, mode: "flash" };
     const pool = R.order.filter(i => R.filter === "all" || (deck[i].view || "night") === R.filter);

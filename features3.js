@@ -49,7 +49,7 @@
   }
   let SIT = null;
   routes.situations = (H, args) => {
-    H.setTab("orals"); H.title("Collision situations");
+    H.setTab("situations"); H.title("Collision situations");
     if (!SIT || args[0] === "next") { const s = scenario(); SIT = Object.assign(s, { picked: null, n: (SIT && SIT.n) || 0, c: (SIT && SIT.c) || 0 }); if (args[0] === "next") { location.replace("#/situations"); return; } }
     H.view.innerHTML = `<h1>Collision situations</h1><p class="muted small">Generated textbook encounters with one correct action under the Rules. In the oral, say what she is, what the situation is, who gives way, and your action with the rule numbers.</p>
       <div class="qcard"><div class="qtext" style="font-weight:500">${H.esc(SIT.q)}</div><p><b>What is the situation and your action?</b></p>

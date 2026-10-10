@@ -1,6 +1,6 @@
 /* Offline cache: app shell + content. Bump VERSION when content is rebuilt. */
-const VERSION = "smb-28d6b04d67";
-const FILES = ["./", "index.html", "styles.css", "notesfmt.js", "app.js", "ror.js", "morse.js", "navcalc.js", "symbols.js", "features.js", "features2.js", "features3.js", "colreg.js", "data/papers.js", "data/content.js", "manifest.webmanifest", "icon.svg"];
+const VERSION = "smb-85bf31da70";
+const FILES = ["./", "index.html", "styles.css", "notesfmt.js", "app.js", "ror.js", "morse.js", "navcalc.js", "symbols.js", "features.js", "features2.js", "features3.js", "features4.js", "colreg.js", "data/papers.js", "data/content.js", "manifest.webmanifest", "icon.svg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k)))));
