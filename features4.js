@@ -116,7 +116,7 @@
     H.view.innerHTML = `<h1>Syllabus checklist</h1><p class="muted small">Every item of the 2nd Mate (FG) syllabus, part by part. Tick each one when you can explain it without notes; tap a topic code to read it. For the orals, prepare each item at five levels: definition, principle, procedure, the rule that applies, and a scenario.</p>
       <div class="card"><b>${td} of ${tn} ticked</b> (${tn ? Math.round(100 * td / tn) : 0} %)${H.bar(tn ? 100 * td / tn : 0)}</div>
       <div class="list">${D.map((p, pi) => { const [d, n] = count(pi); return `<a class="row" href="#/checklist/${open === pi ? "" : pi}"><span class="grow"><b>${H.esc(p.t)}</b></span><span class="pill ${d === n ? "ok" : ""}">${d}/${n}</span></a>` +
-        (open === pi ? p.secs.map(s => `<div class="card"><b>${H.esc(s.t)}</b>${s.items.map(([it, m]) => `<label style="display:flex;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line)"><input type="checkbox" data-k="${H.esc(key(pi, it))}" ${S.ck[key(pi, it)] ? "checked" : ""}><span class="grow" style="flex:1">${H.esc(it)}</span>${m ? `<a class="small" href="#/m/${m}">${m}</a>` : ""}</label>`).join("")}</div>`).join("") : ""); }).join("")}</div>
+        (open === pi ? p.secs.map(s => `<div class="ck-sec"><b>${H.esc(s.t)}</b>${s.items.map(([it, m]) => `<label style="display:flex;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line)"><input type="checkbox" data-k="${H.esc(key(pi, it))}" ${S.ck[key(pi, it)] ? "checked" : ""}><span class="grow" style="flex:1">${H.esc(it)}</span>${m ? `<a class="small" href="#/m/${m}">${m}</a>` : ""}</label>`).join("")}</div>`).join("") : ""); }).join("")}</div>
       <p class="small muted">COLREG has four annexes (I to IV); lists that show an "Annex V" are mixing in the US Inland Rules. Ticks are saved on this device; use Backup in More to move them.</p>`;
     H.view.querySelectorAll("input[data-k]").forEach(c => c.onchange = () => { if (c.checked) S.ck[c.dataset.k] = 1; else delete S.ck[c.dataset.k]; H.save(); const y = window.scrollY; routes.checklist(H, [open]); window.scrollTo(0, y); });
   };
@@ -127,7 +127,7 @@
     const dark = S.theme ? S.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     H.view.innerHTML = `<h1>Settings</h1>
       <div class="card"><b>Notes text size</b><div class="seg" style="margin-top:8px">${["S", "M", "L"].map(z => `<button class="${(S.font || "M") === z ? "on" : ""}" data-z="${z}">${{ S: "Small", M: "Medium", L: "Large" }[z]}</button>`).join("")}</div>
-        <p class="small muted notes font-${S.font || "M"}" style="margin:10px 0 0">Sample: the safety contour is the depth contour that ECDIS uses to mark safe water.</p></div>
+        <p class="muted" style="margin:10px 0 0;font-size:${{ S: "14.5px", M: "16px", L: "18.5px" }[S.font || "M"]}">Sample: the safety contour is the depth contour that ECDIS uses to mark safe water.</p></div>
       <div class="card"><b>Theme</b><div class="seg" style="margin-top:8px"><button data-t="light" class="${dark ? "" : "on"}">Light</button><button data-t="dark" class="${dark ? "on" : ""}">Dark</button></div></div>
       <div class="card"><b>Your progress</b><p class="small muted" style="margin:6px 0">Stored only in this browser. Nothing is sent anywhere.</p><div class="btns"><a class="btn ghost" href="#/backup">Backup & restore</a></div></div>`;
     H.view.querySelectorAll("[data-z]").forEach(b => b.onclick = () => { S.font = b.dataset.z; H.save(); routes.settings(H); });
