@@ -118,6 +118,10 @@
       const d = document.createElement("div"); d.className = "n-memory"; d.innerHTML = '<div class="n-memory-label">Say it in one breath</div>';
       rest.forEach(n => d.append(n)); s.append(d);
     });
+    // an intro made only of callout boxes needs no outer card (avoids a box inside a box)
+    article.querySelectorAll("section.lead").forEach(s => {
+      if ([...s.children].every(c => /(n-info|n-ok|n-warn|n-q)/.test(c.className) || c.tagName === "HR")) s.classList.add("bare");
+    });
     markValues(article);
     return anchors;
   };

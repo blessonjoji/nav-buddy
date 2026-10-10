@@ -224,7 +224,7 @@
       <div class="sb-section">Functions</div>${["F1", "F2", "F3"].map(fn).join("")}${item("#/f/SIG", "light", "Signals<small>Morse</small>", "SIG")}
       <div class="sb-section">ROR & Stability</div>${item("#/ror", "light", "Lights & shapes<small>ROR cards</small>", "ror")}${item("#/colreg", "book", "COLREG rules", "colreg")}${item("#/annex", "file", "Annexes I to IV", "annex")}${item("#/arcs", "light", "Light arcs", "arcs")}${item("#/buoyage", "anchor", "Buoyage", "buoyage")}${item("#/situations", "ship", "Collision situations", "situations")}${item("#/stability", "scale", "Stability", "stability")}
       <div class="sb-section">Practice</div>${item("#/practice", "check", "Quiz Bank", "practice")}${item("#/papers", "file", "Past Papers", "papers")}${item("#/exam", "clock", "Exam Mode", "exam")}${item("#/tools", "calc", "Calculators", "tools")}
-      <div class="sb-section">My study</div>${item("#/checklist", "check", "Syllabus checklist", "checklist")}${item("#/progress", "scale", "Progress & planner", "progress")}${item("#/bookmarks", "book", "Bookmarks", "bookmarks")}${item("#/more", "search", "More", "more")}
+      <div class="sb-section">My study</div>${item("#/checklist", "check", "Syllabus checklist", "checklist")}${item("#/progress", "scale", "Progress & planner", "progress")}${item("#/bookmarks", "book", "Bookmarks", "bookmarks")}${item("#/more", "search", "More", "more")}${item("#/settings", "scale", "Settings", "settings")}
       <div class="sb-foot small muted">Free · offline · no account</div>`;
   }
   const closeDrawer = () => document.body.classList.remove("drawer");
@@ -270,7 +270,7 @@
     let body = "";
     if (tab === "notes") {
       const idx = M.indexOf(m), prev = M[idx - 1], next = M[idx + 1];
-      body = `<nav class="note-anchors" id="anchors"></nav><div class="seg fontseg"><span class="small muted" style="align-self:center">Text size</span>${["S", "M", "L"].map(z => `<button class="${(S.font || "M") === z ? "on" : ""}" data-z="${z}">${z}</button>`).join("")}</div>
+      body = `<nav class="note-anchors" id="anchors"></nav>
         <article class="notes font-${S.font || "M"}">${m.html}</article>
         <div class="btns"><button class="btn ${st.read ? "ghost" : ""}" id="markRead">${st.read ? "✓ Marked as read" : "Mark as read"}</button>
         ${m.quiz.length ? `<a class="btn ghost" href="#/quiz/m:${m.id}">Take the quiz</a>` : ""}</div>
@@ -609,13 +609,14 @@
         <a class="row" href="#/diagrams/P1"><span class="grow">Diagram register (planned drawings)</span></a>
       </div>
       <h2>Settings</h2>
-      <div class="card"><div class="btns"><button class="btn ghost" id="theme2">Toggle light/dark</button><button class="btn ghost" id="reset">Reset my progress</button></div>
+      <div class="card"><div class="seg fontseg"><span class="small muted" style="align-self:center">Notes text size</span>${["S", "M", "L"].map(z => `<button class="${(S.font || "M") === z ? "on" : ""}" data-z="${z}">${z}</button>`).join("")}</div><div class="btns"><button class="btn ghost" id="theme2">Toggle light/dark</button><button class="btn ghost" id="reset">Reset my progress</button></div>
       <p class="small muted">Progress is stored only in this browser. Nothing is sent anywhere.</p></div>
       <h2>About</h2>
       <div class="card kv"><span>Content</span><span>${M.length} topics · ${allQ.length} quiz questions · ${M.reduce((s, m) => s + (m.qa ? m.qa.length : 0), 0)} surveyor answers</span>
       <span>Built</span><span>${esc(C.built)}</span><span>Status</span><span>Draft v1, awaiting review by a serving officer. Always check figures against the official instruments.</span>
       <span>Offline</span><span>Add to home screen from your browser menu to use it like an app.</span></div>`;
     $("#theme2").onclick = () => $("#themeBtn").click();
+    view.querySelectorAll("[data-z]").forEach(b => b.onclick = () => { S.font = b.dataset.z; save(); view.querySelectorAll("[data-z]").forEach(x => x.classList.toggle("on", x === b)); });
     $("#reset").onclick = () => { if (confirm("Clear all read marks, quiz history and bookmarks on this device?")) { S = { read: {}, bm: {}, quiz: {}, theme: S.theme }; save(); more(); } };
   }
   function notFound() { view.innerHTML = '<div class="empty"><p>Page not found.</p><a class="btn" href="#/">Home</a></div>'; }

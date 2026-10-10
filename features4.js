@@ -121,6 +121,19 @@
     H.view.querySelectorAll("input[data-k]").forEach(c => c.onchange = () => { if (c.checked) S.ck[c.dataset.k] = 1; else delete S.ck[c.dataset.k]; H.save(); const y = window.scrollY; routes.checklist(H, [open]); window.scrollTo(0, y); });
   };
 
+  /* ---------- Settings ---------- */
+  routes.settings = H => {
+    H.setTab("settings"); H.title("Settings"); const S = H.S;
+    const dark = S.theme ? S.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    H.view.innerHTML = `<h1>Settings</h1>
+      <div class="card"><b>Notes text size</b><div class="seg" style="margin-top:8px">${["S", "M", "L"].map(z => `<button class="${(S.font || "M") === z ? "on" : ""}" data-z="${z}">${{ S: "Small", M: "Medium", L: "Large" }[z]}</button>`).join("")}</div>
+        <p class="small muted notes font-${S.font || "M"}" style="margin:10px 0 0">Sample: the safety contour is the depth contour that ECDIS uses to mark safe water.</p></div>
+      <div class="card"><b>Theme</b><div class="seg" style="margin-top:8px"><button data-t="light" class="${dark ? "" : "on"}">Light</button><button data-t="dark" class="${dark ? "on" : ""}">Dark</button></div></div>
+      <div class="card"><b>Your progress</b><p class="small muted" style="margin:6px 0">Stored only in this browser. Nothing is sent anywhere.</p><div class="btns"><a class="btn ghost" href="#/backup">Backup & restore</a></div></div>`;
+    H.view.querySelectorAll("[data-z]").forEach(b => b.onclick = () => { S.font = b.dataset.z; H.save(); routes.settings(H); });
+    H.view.querySelectorAll("[data-t]").forEach(b => b.onclick = () => { S.theme = b.dataset.t; H.save(); if (S.theme) document.documentElement.dataset.theme = S.theme; routes.settings(H); });
+  };
+
   /* ---------- Stability hub ---------- */
   routes.stability = H => {
     H.setTab("stability"); H.title("Stability");

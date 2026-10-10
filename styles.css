@@ -296,6 +296,9 @@ h2.paper-head{margin:26px 0 4px;padding-bottom:6px;border-bottom:1px solid var(-
 article.notes{background:transparent;border:0;box-shadow:none;padding:0}
 .n-sec{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px 16px;margin:0 0 16px;box-shadow:var(--shadow);scroll-margin-top:70px}
 .n-sec.lead{border-left:4px solid var(--n-blue)}
+.n-sec.lead.bare{background:none;border:0;box-shadow:none;padding:0 2px}
+.n-sec.lead.bare>:first-child{margin-top:0}
+.n-sec.lead.bare>hr{display:none}
 .n-sec.example{border-left:4px solid var(--n-orange)}
 .n-sec.revise{border-color:var(--n-green-b)}
 .n-sec>p,.n-sec li{line-height:1.75}
