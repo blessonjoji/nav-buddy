@@ -44,6 +44,9 @@ h3{font-size:16px;margin:16px 0 6px}
 .tile .t{font-weight:600;display:block}
 .list a.row{display:flex;gap:10px;align-items:center;padding:12px 14px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
 .list a.row:last-child{border-bottom:0}
+.list div.row{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-bottom:1px solid var(--line);line-height:1.5}
+.list div.row:last-child{border-bottom:0}
+.list div.row .small{display:inline-block;margin-top:3px}
 .list a.row:hover{background:var(--accent-soft)}
 .list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
 .row .grow{flex:1;min-width:0}
